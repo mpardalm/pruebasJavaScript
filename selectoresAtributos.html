@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .selected {
+            color: tomato;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var equal = $("a[lang='es']");
+            var end = $("a[href$='.com']");
+            var contiene = $("a[dir*='lt'][lang='es']");
+            console.log("Valor seleccionado igual " + equal.text());
+            console.log("Valor seleccionado final " + end.text());
+            console.log(contiene.text());
+            $("#enlace1").on("mouseover", function () {
+                $(this).addClass("selected");
+            });
+
+            $("#enlace1").on("mouseout", function () {
+                $(this).removeClass("selected");
+            });
+
+            $("#prueba").keypress(function (event) {
+                console.log(event.which);
+                alert('holi');
+            });
+
+            $("div").after("<p>Test 1</p>");
+
+        });    
+    </script>
+</head>
+
+<body>
+    <input id="prueba" type="text">
+    <div id="body">
+        <li><a href="http://mi.viewnext.es" lang="es" dir="ltr">Enlace Espanol:ES</a></li>
+        <li><a href="http://mi.viewnext.com" lang="en" dir="ltr">Enlace Ingles:EN</a></li>
+        <li><a href="#" lang="fr" dir="rtl">Enlace Frances:FR</a></li>
+        </ul>
+        <ul id="social_box">
+            <li><a href="#" title="Publicar en Facebook">Facebook</li>
+            <li><a href="#" title="Publicar en Twitter">Twitter</li>
+            <li><a href="#" title="Publicar en LinkedIn">LinkendIN</li>
+            <li><a href="#" title="En Technorati">Technorati</a></li>
+        </ul>
+    </div>
+    <div>
+        <p id="enlace1">Hola prueba</p>
+        <script>
+            $.ajax({
+                // URL a la que realizar la petición
+                url: 'target.php',
+                // tipo de petición: GET o POST
+                type: 'POST',
+                // información a enviar en la petición
+                data: { id: 123 },
+                // tipo de respuesta esperada
+                dataType: 'json',
+                // función controladora de respuesta, que recibe como parámetro
+                // la respuesta obtenida
+                success: function (json) {
+                    console.log(json);
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

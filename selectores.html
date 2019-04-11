@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            alert("Ocultamos las celdas seleccionadas");
+            seleccion = $(".primera, .sexta, .cuarta");
+            setTimeout(function(){
+                seleccion.fadeOut("slow");
+            }, 1000);
+            //seleccion.fadeOut("slow");
+            setTimeout(function(){
+                alert ("Y mostramos las celdas seleccionadas");
+                seleccion.fadeIn(2000);
+                seleccion.animate({fontSize : '20px'}, 'slow');
+            }, 3000);
+            var $elementoDos = $('table').find('.segundo').filter(function(index, element){
+                return element;
+            });
+            $elementoDos.animate({letterSpacing: "10px"});
+            /*$seleccion.toggle();
+            setTimeout(function(){
+                alert ("Y mostramos las celdas seleccionadas");
+                $seleccion.toggle();
+            }, 3000)*/
+        });
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tr class="primera">
+            <td>UNO</td>
+        </tr>
+        <tr class="segundo">
+            <td>DOS</td>
+        </tr>
+        <tr class="tercero">
+            <td>TRES</td>
+        </tr>
+        <tr class="cuarta">
+            <td>CUATRO</td>
+        </tr>
+        <tr class="quinto">
+            <td>QUINTO</td>
+        </tr>
+        <tr class="sexta">
+            <td>SEIS</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+
+<body>
+    <div>
+        <span>Dani</span>
+        <span>Gaby</span>
+        <span>Fede</span>
+        <span>Jaco</span>
+    </div>
+    <div>
+        <div>
+            <span>Daniel</span>
+            <span>Gabriela</span>
+            <span>Federico</span>
+            <span>Jacobo</span>
+        </div>
+        <script>
+            $("div span:first-child").css("color", "red")
+            $("div span:last-child").css("background-color", "green")
+        </script>
+    </div>
+
+    <input type="checkbox" checked />
+    <input type="checkbox"/>
+    <input type="checkbox" checked />
+    <input type="button" value="Press Me!">
+
+    <p>Prueba Añadir elementos</p>
+
+<p class="hola">Hola (Haz click sobre mi)</p>
+
+<p class="adios">Adios (Haz click sobre mi)<p>
+    <script>
+
+
+        $("input[type='button']").on('click',function(){
+            alert('Trigger después de 2 segundos');
+        });
+
+setTimeout(function(){
+    $("input[type='button']").trigger('click');
+}, 2000);
+        
+
+        $("span").one('mouseover', function(){
+            $(this).css("background-color", "blue");
+        });
+
+        console.log($(":checked"));
+        
+        $("span").each(function (index) {
+            console.log(index + " " + $(this).text());
+        });
+
+        $("input[type='checkbox']").change(function(){
+            console.log($(":checked").length);
+        });
+
+        var lista = [0, 1, 2, 3, 4];
+        resultado = $.map(lista, function (val) {
+            return val + val;
+        });
+        console.log(resultado);
+
+        $primera = $("span:first");
+        console.log($primera.text());
+
+
+        $("p").attr("align", "center");
+
+        $(".hola").click(function () {
+
+            $(".hola").after("<p align='center' class='quetal'>¿Que tal?</p>");
+
+        });
+
+        $(".adios").click(function () {
+
+            $(".adios").before("<p align='center'>Muy bien</p>");
+
+        });
+
+        $(".adios").wrap("<p align='center' class='mevoy'>Me voy</p>");
+
+        var nuevelemento = "<p align='center'> No vuelvas tarde</p>";
+
+        $(".adios").prepend(nuevelemento);
+    </script>
+</body>
+
+<script>

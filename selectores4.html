@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .siblings * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".prev").prev().css({ "color": "green", "border": "2px solid green" });
+            $(".prevAll").prevAll().css({ "color": "blue", "border": "2px solid red" });
+            $(".nextAll").nextAll().css({ "color": "yellow", "border": "2px solid red" });
+        });
+    </script>
+</head>
+
+<body>
+    <div style="width:500px;" class="siblings">
+        <ul>ul (parent)
+            <li> Anterior </li>
+            <li class="prevAll">prevAll :el anterior azul.</li>
+            <li class="prev">prev: este a rojo.</li>
+            <li class="nextAll">nextAll : los siguientes amarillo.</li>
+            <li> Siguiente </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("p").css("background-color" , "yellow");
+      $('p').css("fontSize", "50px");
+      console.log( $("p").length);
+
+      var $parrafos = $('body').children('p');
+
+      $('#btn1').on('click', function(){
+        mostrarEnSecuencia($parrafos, 300);
+      });
+
+      function mostrarEnSecuencia($coleccion, tiempo){
+        $coleccion.each(function(indice, elemento){
+          $(elemento).slideToggle(tiempo * (indice + 1));
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <p> Letra en rojo (color) y luego fondo amarillo (background-color) </p>
+  <p> Letra en rojo (color) y luego fondo amarillo (background-color) </p>
+  <p> Letra en rojo (color) y luego fondo amarillo (background-color) </p>
+
+  <button id="btn1">Púlsame</button>
+  <input type="button" value="Press Me">
+</body>
+
+</html>
