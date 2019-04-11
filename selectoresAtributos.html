@@ -16,13 +16,14 @@
             console.log("Valor seleccionado igual " + equal.text());
             console.log("Valor seleccionado final " + end.text());
             console.log(contiene.text());
-            $("#enlace1").on("mouseover", function () {
-                $(this).addClass("selected");
-            });
 
-            $("#enlace1").on("mouseout", function () {
+            var $enlace1 = $('#enlace1');
+            $enlace1.hover(function(){
+                $(this).addClass("selected");
+            }, function(){
                 $(this).removeClass("selected");
             });
+
 
             $("#prueba").keypress(function (event) {
                 console.log(event.which);

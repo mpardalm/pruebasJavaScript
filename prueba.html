@@ -21,6 +21,12 @@
           $(elemento).slideToggle(tiempo * (indice + 1));
         });
       }
+
+      var $input = $('#claim');
+      var $parrafoCambio = $('p').first();
+      $input.on('keyup', function(event){
+        $parrafoCambio.text($input.val());
+      });
     });
   </script>
 </head>
@@ -32,6 +38,8 @@
 
   <button id="btn1">Púlsame</button>
   <input type="button" value="Press Me">
+
+  <input type="text" id="claim">
 </body>
 
 </html>
